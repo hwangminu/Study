@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04.opgg.html</title>
+    <style>
+        body{
+            border: 1px dashed red;
+            width: 1500px;
+        }
+        input[type="search"] {
+            all: unset;
+            
+            margin: 20px auto;
+            margin-left: 150px;
+            border: transparent;
+            box-sizing: border-box;
+            box-shadow: 2px 2px 2px ;
+        }
+        p > button{
+            height: 35px;
+            margin-left: 5px;
+        }
+        thead {
+            background-color: grey;
+        }
+        .blue{
+            background-color: lightblue;
+        }
+        .red {
+            background-color: lightpink;
+        }
+        .hidden{
+            display: none;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <h1>04.opgg.html</h1>
+    <hr>
+
+    <p><input type="search"
+                id="search"
+                placeholder="검색어를 입력해주세요."
+                autocomplete="off">
+                <button id="searchBtn">검색</button>
+            </p>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th order = "1" class="user">닉네임 <span></span></th>
+                <th order = "1" class="champion">챔피언<span></span></th>
+                <th order = "1" class="team">팀<span></span></th>
+                <th order = "1" class="kill">킬<span></span></th>
+                <th order = "1" class="death">데스<span></span></th>
+                <th order = "1" class="assist">어시스트<span></span></th>
+                <th order = "1" class="damage">데미지<span></span></th>
+                <th order = "1" class="cs">CS<span></span></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="opgg_result.js"></script>
+    <script>
+        function isNumeric(str){
+            return !isNaN(str) == false
+        }
+
+        function loadHandler(){
+            const tbody = document.querySelector('tbody')
+            let tag=''
+            arr.forEach(ob => {
+                if(ob.team == '블루'){
+                    tag += `<tr class="blue">`
+                }
+                else{
+                    tag += `<tr class="red">`
+                }
+
+                    tag += `    <td class="user"> ${ob.user} </td>`
+                    tag += `    <td class="champion"> ${ob.champion} </td>`
+                    tag += `    <td class="team"> ${ob.team} </td>`
+                    tag += `    <td class="kill"> ${ob.kill} </td>`
+                    tag += `    <td class="death"> ${ob.death} </td>`
+                    tag += `    <td class="assist"> ${ob.assist} </td>`
+                    tag += `    <td class="damage"> ${ob.damage} </td>`
+                    tag += `    <td class="cs"> ${ob.cs} </td>`
+                    tag += `</tr>`
+                })
+                tbody.innerHTML += tag
+            }
+            window.onload = loadHandler
+
+            const thList = document.querySelectorAll('th')
+
+            function sortHandler(event){
+                const tbody = document.querySelector('tbody')
+                const className = event.target.className
+                const order = +event.target.getAttribute('order')
+                document.querySelectorAll('thead span').forEach(span => span.innerText = '')
+                event.target.querySelector('span').innerText = order > 0 ? '▲' : '▼'
+                event.target.setAttribute('order', -order)
+
+                const trArray = Array.from(document.querySelectorAll('tbody > tr'))
+    
+                trArray.sort((a,b) => {
+                    let valueA = a.querySelector('.' + className).innerText
+                    let valueB = b.querySelector('.' + className).innerText
+
+                    if(isNumeric(valueA) && isNumeric(valueB)){
+                        valueA = +valueA
+                        valueB = +valueB
+                    }
+                    let result = valueA > valueB ? 1 : -1
+                    return result * order
+                })
+                trArray.forEach(tr => tbody.appendChild(tr))
+            }
+            document.querySelectorAll('th').forEach(th => th.onclick = sortHandler)
+
+            function searchHandler(){
+                const searchKeyword = document.getElementById('search').value
+
+                const trList = document.querySelectorAll('tbody > tr')
+
+                trList.forEach(tr => {
+                    const username = tr.querySelector('user').innerText
+                    if (username.includes(searchKeyword) == false) {
+                        tr.classList.add('hidden')
+                    }
+                    else(
+                        tr.classList.remove('hidden')
+                        )
+                })
+            }
+            const searchBtn = document.getElementById('searchBtn')
+            searchBtn.onclick = searchHandler
+    </script>
+</body>
+</html>

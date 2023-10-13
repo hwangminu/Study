@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+        td,th{
+            padding: 10px;
+            border: 1px solid grey;
+        }
+        th{
+            background-color: lightblue;
+        }
+        th:hover{
+            cursor: pointer;
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>01.homeplus.html</h1>
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="name">상품이름</th>
+                <th class="price">가격</th>
+                <th class="salesCount">판매건수</th>
+                <th class="grade">점수</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="homeplus(berry).js"></script>
+    <script>
+        console.log(arr.length)
+
+        const saleList = arr.filter(ob => ob.price != ob.salePrice)
+        console.log(saleList.length)
+
+        const dataList = arr.map(ob => {
+            const data = {
+                name: ob.name,
+                price: ob.price,
+                salesCount:ob.salesCount,
+                grade: ob.grade
+            }
+            return data
+        })
+        console.log(dataList[0])
+
+        const tbody = document.querySelector('tbody')       // tbody를 불러온다
+
+        dataList.forEach(ob => {                                 // 반복문 실행
+            let tag = ``
+            tag += `<tr>`
+            tag += `    <td>${ob.name}</td>`
+            tag += `    <td>${ob.price}</td>`
+            tag += `    <td>${ob.salesCount}</td>`
+            tag += `    <td>${ob.grade}</td>`
+            tag += `</tr>`
+            tbody.innerHTML += tag                          // 위의 태그를 tbody에 넣어준다
+        })
+    </script>
+    <script>
+        
+        // name 을 클릭하면 각 객체의 name 을 기준으로 정렬하기
+        const name = document.querySelector('th.name')
+
+        name.onclick = function() {
+            const trList = document.querySelectorAll('tbody > tr')
+            const trArray = Array.from(trList)
+            trArray.sort((a,b) => {
+                const nameA = a.querySelector('td:nth-child(1)').innerText
+                const nameB = b.querySelector('td:nth-child(1)').innerText
+                return nameA > nameB ? 1 : -1
+            })
+            trArray.forEach(tr => tbody.appendChild(tr))
+        }
+
+        const price = document.querySelector('th.price')
+
+        price.onclick = function() {
+            const trList = document.querySelectorAll('tbody > tr')
+            const trArray = Array.from(trList)
+            trArray.sort((a,b) => {
+                const priceA = +a.querySelector('td:nth-child(2)').innerText
+                const priceB = +b.querySelector('td:nth-child(2)').innerText
+                return priceA < priceB ? 1 : -1
+            })
+            trArray.forEach(tr => tbody.appendChild(tr))
+        }
+
+        const salesCount = document.querySelector('th.salesCount')
+
+        salesCount.onclick = function() {
+            const trList = document.querySelectorAll('tbody > tr')
+            const trArray = Array.from(trList)
+            trArray.sort((a,b) => {
+                const salesCountA = +a.querySelector('td:nth-child(3)').innerText
+                const salesCountB = +b.querySelector('td:nth-child(3)').innerText
+                return salesCountA < salesCountB ? 1 : -1
+            })
+            trArray.forEach(tr => tbody.appendChild(tr))
+        }
+
+        const grade = document.querySelector('th.grade')
+
+        grade.onclick = function() {
+            const trList = document.querySelectorAll('tbody > tr')
+            const trArray = Array.from(trList)
+            trArray.sort((a,b) => {
+                const gradeA = +a.querySelector('td:nth-child(4)').innerText
+                const gradeB = +b.querySelector('td:nth-child(4)').innerText
+                return gradeA < gradeB ? 1 : -1
+            })
+            trArray.forEach(tr => tbody.appendChild(tr))
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #root{
+            /* border: 1px dashed red; */
+            width: 1560px;
+            margin: auto;
+            background-color: black;
+        }
+        .wrap{
+            /* border: 1px dashed blue; */
+            display: flex;
+            flex-flow: wrap;
+            
+        }
+        .item{
+            /* border: 1px dashed green; */
+            width: 360px;
+            height: 280px;
+            margin: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+        }
+        .item > img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .content{
+            /* border: 1px dashed yellow; */
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            width: 360px;
+            height: 75px;
+            color: white;
+            padding-bottom: 0;
+            
+
+        }
+        .left{
+            flex: 1;
+           
+            /* border: 1px dashed red; */
+        }
+        .left > img{
+            scale: 90%;
+            width: 75%;
+            border-radius: 100%;
+            margin-left: 5px;
+            margin-top: 5px;
+            
+
+        }
+        .right{
+            flex: 5;
+            margin-left: 5px;
+            /* border: 1px dashed blue; */
+        }
+        .title{
+            font-size: 15px;
+            height: 40px;
+            text-align: left;
+            overflow: hidden;
+            font-weight: 600;
+            color: white;
+            margin-top: 5px;
+        }
+        p{
+            margin: 1px;
+            color: #dadada;
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="wrap">
+            <div class="item">
+                <img src="youtube/01.webp">
+                <div class="content">
+                    <div class="left">
+                        <img src="youtube/01-1.jpeg">
+                    </div>
+                    <div class="right">
+                        <p class="title">끝없이 올라가는 가계부채, OECD 압도적 1위 </p>
+                        <p>슈카월드</p>
+                        <p>조회수 7.2만회 • 1시간 전</p>
+                    </div>
+            </div>
+            </div>
+            <div class="item">
+                <img src="youtube/02.webp">
+                <div class="content">
+                    <div class="left">
+                        <img src="youtube/02-01.jpeg">
+                    </div>
+                    <div class="right">
+                        <p class="title">[1박2일시즌1 177-2][강원홍천] 내가 맘에 들어하는 여자들은 | KBS110130방송 </p>
+                        <p>KBS Entertain:깔깔티비</p>
+                        <p>조회수 97만회• 2년 전</p>
+                    </div>
+            </div>
+            </div>
+            <div class="item">
+                <img src="youtube/03.webp">
+                <div class="content">
+                    <div class="left">
+                        <img src="youtube/03-01.jpeg">
+                    </div>
+                    <div class="right">
+                        <p class="title">뒤가 없는 피오라 </p>
+                        <p>PAKA</p>
+                        <p>조회수 36만회 • 8시간 전</p>
+                    </div>
+            </div>
+            </div>
+            <div class="item">
+                <img src="youtube/04.webp">
+                <div class="content">
+                    <div class="left">
+                        <img src="youtube/04-01.jpeg">
+                    </div>
+                    <div class="right">
+                        <p class="title">이삿짐 버리기몰카 2 (Throwing away properties prank 2) - 쿠쿠크루(Cuckoo Crew) </p>
+                        <p>쿠쿠크루 - Cuckoo Crew</p>
+                        <p>조회수 450만회 • 7년 전</p>
+                    </div>
+            </div>
+            </div>
+            <div class="item">
+                <img src="youtube/05.webp">
+                <div class="content">
+                    <div class="left">
+                        <img src="youtube/05-01.jpeg">
+                    </div>
+                    <div class="right">
+                        <p class="title">감스트 이강인 키우기 PSG에서 리그,챔스 우승도전! </p>
+                        <p>감스트GAMST</p>
+                        <p>조회수 14만회 • 5시간 전</p>
+                    </div>
+            </div>
+            </div>
+            <div class="item">
+                <img src="youtube/06.webp">
+                <div class="content">
+                    <div class="left">
+                        <img src="youtube/06-01.jpeg">
+                    </div>
+                    <div class="right">
+                        <p class="title">★추석특집 백분순삭★ 2016 무한상사 위기의 회사원 (= 나🤦‍♀) | 무한도전⏱오분순삭 MBC160903방송</p>
+                        <p>오분순삭</p>
+                        <p>조회수 243만회 • 10개월 전</p>
+                    </div>
+            </div>
+            </div>
+            <div class="item">
+                <img src="youtube/07.webp">
+                <div class="content">
+                    <div class="left">
+                        <img src="youtube/07-01.jpeg">
+                    </div>
+                    <div class="right">
+                        <p class="title">히틀러는 왜 스위스를 공격하지 않았을까? </p>
+                        <p>간다효</p>
+                        <p>조회수 13만회 • 1일 전</p>
+                    </div>
+            </div>
+            </div>
+            <div class="item">
+                
+                <img src="youtube/08.webp">
+                <div class="content">
+                    <div class="left">
+                        <img src="youtube/08-01.jpeg">
+                    </div>
+                    <div class="right">
+                        <p class="title">비열한 허위딜러의 세계 몰아보기 (ep.01~최종화)</p>
+                        <p>별놈들</p>
+                        <p>조회수 72만회 • 7개월 전</p>
+                    </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

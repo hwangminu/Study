@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.sort2.html</title>
+    <style>
+
+    div{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /* 여기는 각 요소의 윤곽을 잡는 부분 */
+    #root{
+        width: 1600px;
+        margin: auto;
+    }
+    .wrap{
+        display: flex;
+        flex-flow: wrap;
+    }
+
+    .item{
+        /* border: 1px dashed red; */
+        margin: 30px 10px;
+        width: 360px;
+        height: 320px;
+        cursor: pointer;
+    }
+    /* 내부 상세 요소의 배치 + 디테일 외형 */
+    .item > .image {
+        /* border: 1px dashed blue; */
+        height: 200px;
+        margin-bottom: 10px;
+
+    }
+    .item > .image > img{
+        width: 100%;
+        border-radius: 10px;
+        
+    }
+    .item > .content{
+        /* border: 1px dashed green; */
+        /* height: max-content; */
+        display: flex;
+    }
+    .content > .left {
+        /* border: 1px dashed skyblue; */
+        flex: 1;
+        padding-right: 10px;
+    }
+    .content > .left > img {
+        border-radius: 50%;
+        width: 100%;
+    }
+    .content > .right{
+        /* border: 1px dashed hotpink; */
+        flex: 7;
+    }
+    .content > .right > .title {
+        font-size: 1.1em;
+        font-weight: 600;
+    }
+    .content > .right > div:not(.title){
+        color: grey;
+    }
+    .content > .right > .channel > span {
+        background-color: grey;
+        color: white;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        font-size: 12px;
+        text-align: center;
+        border-radius: 50%;
+        margin-left: 5px;
+    }
+</style>
+</head>
+<body>
+    <h1>10.sort2.html</h1>
+    <hr>
+
+    <div id="sortBtns">
+        <button id="nameAsc">이름 오름차순 정렬</button>
+        <button id="nameDesc">이름 내림차순 정렬</button>
+    </div>
+
+    <div id="root">
+        <div class="wrap">
+
+            <div class="item">
+                <div class="image">
+                    <img src="youtube/01.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="youtube/01-1.jpeg">
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            끝없이 올라가는 가계부채, OECD 압도적 1위
+                        </div>
+                        <div class="channel">슈카월드</div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 7.2만회</span>
+                            •
+                            <span class="uploadTime">1시간 전 </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="youtube/02.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="youtube/02-01.jpeg">
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            [1박2일시즌1 177-2][강원홍천] 내가 맘에 들어하는 여자들은 | KBS110130방송
+                        </div>
+                        <div class="channel">KBS Entertain:깔깔티비</div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 97만회</span>
+                            •
+                            <span class="uploadTime">2년 전 </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="youtube/03.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="youtube/03-01.jpeg">
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            뒤가 없는 피오라
+                        </div>
+                        <div class="channel">PAKA</div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 36만회</span>
+                            •
+                            <span class="uploadTime">8시간 전 </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="youtube/04.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="youtube/04-01.jpeg">
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            이삿짐 버리기몰카 2 (Throwing away properties prank 2) - 쿠쿠크루(Cuckoo Crew)
+                        </div>
+                        <div class="channel">쿠쿠크루 - Cuckoo Crew</div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 450만회</span>
+                            •
+                            <span class="uploadTime">7년 전 </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="youtube/05.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="youtube/05-01.jpeg">
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            감스트 이강인 키우기 PSG에서 리그,챔스 우승도전!
+                        </div>
+                        <div class="channel">감스트GAMST</div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 14만회</span>
+                            •
+                            <span class="uploadTime">5시간 전 </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="youtube/06.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="youtube/06-01.jpeg">
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            ★추석특집 백분순삭★ 2016 무한상사 위기의 회사원 (= 나🤦‍♀) | 무한도전⏱오분순삭 MBC160903방송
+                        </div>
+                        <div class="channel">오분순삭</div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 243만회</span>
+                            •
+                            <span class="uploadTime">10개월 전 </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="youtube/07.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="youtube/07-01.jpeg">
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            히틀러는 왜 스위스를 공격하지 않았을까?
+                        </div>
+                        <div class="channel">간다효</div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 13만회</span>
+                            •
+                            <span class="uploadTime">1일 전 </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="youtube/08.webp">
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="youtube/08-01.jpeg">
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            비열한 허위딜러의 세계 몰아보기 (ep.01~최종화)
+                        </div>
+                        <div class="channel">별놈들</div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 72만회</span>
+                            •
+                            <span class="uploadTime">7개월 전 </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const itemArray = Array.from(document.querySelectorAll('#root > .wrap > .item'))
+        const nameAsc = document.getElementById('nameAsc')
+        const nameDesc = document.getElementById('nameDesc')
+        const wrap = document.querySelector('.wrap')
+        
+
+        nameAsc.onclick = function(){
+            // 일정한 기준에 맞춰서 새로 장렬하고
+            itemArray.sort((a,b) => {
+                const ta = a.querySelector('.title').innerText
+                const tb = b.querySelector('.title').innerText
+                return ta > tb ? 1 : -1
+            })
+            // 정렬한 내용을 원래 div 에 다시 넣는다
+            itemArray.forEach(item => wrap.appendChild(item))
+        }
+
+        nameDesc.onclick = function() {
+            itemArray.sort((a,b) => {
+                const ta = a.querySelector('.title').innerText
+                const tb = b.querySelector('.title').innerText
+                return ta < tb ? 1 : -1
+            })
+            itemArray.forEach(item => wrap.appendChild(item))
+        }
+    </script>
+</body>
+</html>

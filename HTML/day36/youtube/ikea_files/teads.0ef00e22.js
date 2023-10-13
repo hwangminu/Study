@@ -1,0 +1,1 @@
+(function(){"use strict";window.teads_e=window.teads_e||[],window.teads_adv_id=11771;let e=document.createElement("script");e.src="https://p.teads.tv/teads-fellow.js",e.async=!0,document.head.appendChild(e)})();

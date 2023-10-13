@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04.box.html</title>
+    <style>
+        #wrap{
+            width: 400px;
+            height: 400px;
+            margin:auto;
+            border: 3px solid black;
+            padding: 0;
+        }
+        .row{
+            display: flex;
+            /* 내부 요소를 가로로 배치한다 */
+        }
+        .box{
+            /* Border 와 Padding 을 고려하여 전체 크기 계산 */
+            box-sizing: border-box;
+
+            margin:10px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            padding: 10px;
+                /* div 를 여러개 사용하자, div는 기본적으로 세로로 배치 된다 */
+                /* 가로로 배치하고 싶으면, style 의 flex를 사용하자 */  
+        }
+    </style>
+</head>
+<body>
+    <h1>04.box.html</h1>
+    <hr>
+
+    <div id="wrap">
+        <div class="row">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+        <div class="row">
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
+        </div>
+        <div class="row">
+            <div class="box">7</div>
+            <div class="box">8</div>
+            <div class="box">9</div>
+        </div>
+    </div>
+    
+
+</body>
+</html>

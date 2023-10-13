@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.sort3.html</title>
+    <style>
+        table{
+            border-collapse:collapse ;
+            border: 2px solid black;
+            margin: 20px 0;
+        }
+        td, th{
+            padding: 10px;
+            border: 1px solid grey;
+        }
+        img {
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>11.sort3.html</h1>
+    <hr>
+    <div id="sortBtns">
+        <button id="tAsc">이름 오름차순</button>
+        <button id="tDesc">이름 내림차순</button>
+        <button id="pAsc">가격 오름차순</button>
+        <button id="pDesc">가격 내림차순</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>이미지</th>
+                <th>상품명</th>
+                <th>가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="홈플러스/01.jpeg"></td>
+                <td class="title">초록사과 5-8입(봉)</td>
+                <td class="price">9,990원</td>
+            </tr>
+            <tr>
+                <td><img src="홈플러스/02.jpeg"></td>
+                <td class="title">유명산지 사과(충주,문경,거창,영주) 4-6입(봉)</td>
+                <td class="price">12,990원</td>
+            </tr>
+            <tr>
+                <td><img src="홈플러스/03.jpeg"></td>
+                <td class="title">맛이 예쁜 사과 1.8KG(봉)</td>
+                <td class="price">14,990원</td>
+            </tr>
+            <tr>
+                <td><img src="홈플러스/04.jpeg"></td>
+                <td class="title">[착한식탁] 바른 세척 아오리 사과 2.5kg 소과</td>
+                <td class="price">13,900원</td>
+            </tr>
+            <tr>
+                <td><img src="홈플러스/05.jpeg"></td>
+                <td class="title">[착한식탁] 바른 세척 아오리 사과 2kg 소과</td>
+                <td class="price">12,500원</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <script>
+        const trArray = Array.from(document.querySelectorAll('tbody > tr'))
+        const tAsc = document.getElementById('tAsc')
+        const tDesc = document.getElementById('tDesc')
+        const pAsc = document.getElementById('pAsc')
+        const pDesc = document.getElementById('pDesc')
+        const table = document.querySelector('tbody')
+
+       
+        
+
+        tAsc.onclick = function(){
+            trArray.sort((a,b) => {
+                const ta = a.querySelector('.title').innerText
+                const tb = b.querySelector('.title').innerText
+                return ta > tb ? 1 : -1
+            })
+            trArray.forEach(tr => table.appendChild(tr))
+        }
+
+        tDesc.onclick = function(){
+            trArray.sort((a,b) => {
+                const ta = a.querySelector('.title').innerText
+                const tb = b.querySelector('.title').innerText
+                return ta < tb ? 1 : -1
+            })
+            trArray.forEach(tr => table.appendChild(tr))
+        }
+
+        pAsc.onclick = function(){
+            trArray.sort((aPrice,bPrice) =>{
+                // const aPrice = +table.tr.price.replace(',','').replace('원','')
+                // const bPrice = +table.tr.price.replace(',','').replace('원','')
+                const pa = +aPrice.querySelector('.price').innerText.replace(',','').replace('원','')
+                const pb = +bPrice.querySelector('.price').innerText.replace(',','').replace('원','')
+
+                return pa < pb ? 1 : -1
+            })
+            trArray.forEach(tr => table.appendChild(tr))
+        }
+        pDesc.onclick = function(){
+            trArray.sort((aPrice, bPrice)=> {
+                const pa = +aPrice.querySelector('.price').innerText.replace(',','').replace('원','')
+                const pb = +bPrice.querySelector('.price').innerText.replace(',','').replace('원','')
+                return pa > pb ? 1 : -1
+            })
+            trArray.forEach(tr => table.appendChild(tr))
+        }
+    
+    </script>
+</body>
+</html>

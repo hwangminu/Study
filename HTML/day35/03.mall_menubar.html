@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        .menubar{
+            margin: 50px auto;
+            border-top: 1px solid #e8e8e8;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        ul{
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            width: 1260px;
+            margin: 0 auto;
+        }
+        ul > li{
+            flex: 5;
+            padding: 10px;
+            text-align: center;
+            margin-left: -2px;
+            position: relative;
+        }
+        ul > li:first-child{
+            flex: 1;
+        }
+        .menubar > ul > li:hover{
+            cursor: pointer;
+        }
+        ol{
+            border: 1px dashed blue;
+
+            list-style: none;
+            padding-left: 0;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 173px;
+            overflow: hidden;
+        }
+        ul > li:hover > ol{
+            height: 250px;
+            transition-duration: 1s;
+        }
+        .frame:hover > ol > li{
+            border: 1px solid grey;
+        }
+        ol > li{
+            background-color: white;
+            width: inherit;
+            margin-bottom: -2px;
+            text-align: center;
+            
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="menubar">
+        <ul style="font-size: 17px;">
+            <li>☰</li>
+            <li style="color: lightcoral;">RONA Universe</li>
+            <li><a href="#">남성의류</a>
+                <ol>
+                    <li><a href="#">아우터</a></li>
+                    <li><a href="#">탑</a></li>
+                    <li><a href="#">세트</a></li>
+                    <li><a href="#">바텀</a></li>
+                    <li><a href="#">악세사리</a></li>
+                </ol>
+            </li>
+            <li><a href="#">아우터</a></li>
+            <li><a href="#">탑</a>
+                <ol class="frame">
+                    <li><a href="#">니트</a></li>
+                    <li><a href="#">셔츠</a></li>
+                    <li><a href="#">블라우스</a></li>
+                    <li><a href="#">후드,맨투맨</a></li>
+                    <li><a href="#">반팔T</a></li>
+                    <li><a href="#">긴팔T</a></li>
+                </ol>
+            </li>
+            <li><a href="#">드레스</a>
+                <ol class="frame">
+                    <li><a href="#">롱/미디</a></li>
+                    <li><a href="#">미니</a></li>
+                </ol>
+            </li>
+            <li><a href="#">바텀</a>
+                <ol class="frame">
+                    <li><a href="#">팬츠</a></li>
+                    <li><a href="#">스커트</a></li>
+                </ol>
+            </li>
+            <li><a href="#">악세사리</a>
+                <ol class="frame">
+                    <li><a href="#">ER</a></li>
+                    <li><a href="#">NC</a></li>
+                    <li><a href="#">BC</a></li>
+                    <li><a href="#">Etc</a></li>
+                </ol>
+            </li>
+        </ul>
+    </div>
+</div>
+    
+</body>
+</html>

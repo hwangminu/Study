@@ -1,0 +1,1 @@
+(function(){"use strict";let e={id:"4504016270131200",key:"4bc7564dccbf4b538379d0009720c74e",name:"cmp-tag-management"};function t(i=e.id,a=e.key,n=e.name,c=.05,m="1.0.0"){let s=[/\/[a-z0-9]{2}\/[a-z0-9]{2}\/marketing-tags\/scripts\//];window?.ikea?.sentry?.register(i,a,n,m,c,s)}window.location.hostname.match("ikea.com")&&t(e.id,e.key,e.name)})();

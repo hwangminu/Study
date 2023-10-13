@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02.dropdown.html</title>
+    <style>
+        a{
+            text-decoration: none; /* a태그의 밑줄은 지워준다 */
+            color: inherit;        /* 기본색깔로 바꿔준다 */
+        }
+        a:hover{
+            text-decoration: underline; /* a태그에 마우스를 올리면 밑줄 */
+        }
+        #nav > ul{
+            list-style: none;   /* #nav 안에 ul리스트의 앞에 점을 때준다 */
+            padding-left: 0;    /* ul 이나 ol 은 점이나 숫자를 찍기위해 padding-left 가 20 정도 적용되어있기 때문에 초기화 왼쪽 오른쪽이 안맞는다 */
+            display: flex;      /* ul들을 가로로 배치한다 */
+            width: 800px;       /* ul의 너비는 800px로 설정 */
+            margin: auto;       /* margin을 auto로 가운데 정렬 */
+        }
+        #nav > ul > li{
+            border: 2px solid black;    /* 테두리는 2px 직선 black */
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            margin-left: -2px;            /* 테두리 2px 때문에 겹쳐서 -2px 해준다 */
+            position: relative;           /* 기준점을 잡아준다 */
+        }
+        #nav > ul > li:hover{
+            background-color: lightpink;    /* ul 안에 li들에 마우스를 올렸을때 배경색 지정*/
+            cursor: pointer;
+        }
+        ol{
+            list-style: none;
+            padding-left: 0;
+            /*display: none;*/                /* 완전히 가려진다 위치,자리차지 */
+            width: fit-content;
+            height: max-content;
+            box-sizing: border-box;
+            position: absolute;           /* 기준점 ul로 부터 절대적인 위치를 가진다 */
+            top: 41px;
+            left: -2px;
+            height: 0;
+            overflow: hidden;
+        }
+        ul > li:hover > ol{
+            /*display: block;*/                /* ul의 li에 마우스를 올리면 숨겨져있던 ol들이 block 으로 나타난다 */
+            height: 250px;
+            transition-duration: 1s;
+        }
+        ol > li {
+            background-color: antiquewhite;
+            border: 2px solid black;
+            padding: 10px;
+            width: inherit;                 /* ol 안의 li 들의 너비는 ol로 부터 상속받는다 */
+            margin-bottom: -2px;
+            width: 138px;
+        }
+        ol > li:hover{
+            background-color: skyblue;
+        }
+        img{
+            width: 800px;
+            display: block;
+            margin: 20px auto;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>02.dropdown.html</h1>
+    <hr>
+
+    <h3>:hover 선택자를 활용하여 dropdown 메뉴를 구성하기</h3>
+
+    <div id="nav">
+        <ul>
+            <li><a href="#">menu1</a>
+                <ol>
+                    <li><a href="#">submenu1</a></li>
+                    <li><a href="#">submenu2</a></li>
+                    <li><a href="#">submenu3</a></li>
+                </ol>
+            </li>
+            <li><a href="#">menu2</a></li>
+            <li><a href="#">menu3</a>
+                <ol>
+                    <li><a href="#">submenu4</a></li>
+                    <li><a href="#">submenu5</a></li>
+                    <li><a href="#">submenu6</a></li>
+                    <li><a href="#">submenu7</a></li>
+                </ol>
+            </li>
+            <li><a href="#">menu4</a></li>
+            <li><a href="#">menu5</a></li>
+        </ul>
+    </div>
+    
+    <img src="image/jisoo.png">
+</body>
+</html>

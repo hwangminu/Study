@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03.ikea.html</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            width: 0 auto;
+        }
+        .massage{
+            height: 40px;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+        }
+        .massage > span{
+            width: 200px;
+            justify-content: space-around;
+            text-align: center;
+        }
+        header{
+            box-sizing: border-box;
+            width: 1650px;
+            margin: auto;
+            /* border: 1px dashed red; */
+            height: 90px;
+            display: flex;
+            align-items: center;
+        }
+        header > div {
+            justify-content: space-between;
+        }
+        a.logo{
+            margin-left: 40px;
+            width: 10%;
+        }
+        header > .joinBtn{
+            width: 300px;
+            text-align: center;
+            font-size: 15px;
+        }
+        header > span:not(.joinBtn){
+            width: 100px;
+            text-align: center;
+        }
+        .search{
+            display: flex;
+            justify-content: center;
+            background-color: #f5f5f5 ;
+            border: 1px solid transparent;
+            width: 100%;
+            height: 50px;
+            margin-left: 10px;
+            margin-right: 40px;
+            border-radius: 30px;
+            
+        }
+        nav{
+            margin: 0 auto;
+            width: 1650px;
+            height: 40px;
+            /* border: 1px dashed blue; */
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .mainnav > ul{
+            display: flex;
+            list-style: none;
+            
+        }
+        .mainnav > ul > li{
+            display: flex;
+            margin-right: 15px;
+            margin-left: 5px;
+            margin-top: 0;
+            
+        }
+        .subnav > ul{
+            display: flex;
+            list-style: none;
+            margin-right: 50px;
+            margin-top: 7px;
+        }
+        .subnav > ul > li:not(:last-child){
+            margin-right: 30px;
+        }
+    
+        main{
+            margin: 50px auto;
+            width: 1560px;
+            /* border: 1px dashed green; */
+            box-sizing: border-box;
+            display: flex;
+        }
+        main > .image > img{
+            width: 1050px;
+            height: 592px;
+        }
+        .yb{
+            background-color: #f2db00 ;
+        }
+        .yb > .inbox{
+            /* border: 1px dashed blue; */
+            margin: 50px 60px;
+        }
+        .inbox:not(h2){
+            font-size: 15px;
+        }
+        .inboxBtn{
+            background-color: black;
+            color: white;
+            border-radius: 30px;
+            padding: 10px;
+            font-weight: 700;
+            font-size: 13px;
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        #sideBtn{
+            font-size: 2em;
+            position: absolute;
+            left: 90px;
+            top: 60px;
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            line-height: 36px;
+            user-select: none;
+        }
+        .menuBtn{
+            left: 89px;
+            position: absolute;
+            top: 95px;
+            font-size: 14px;
+        }
+        aside{
+            width: 480px;
+            height: 100vh;
+            position: fixed;
+            background-color: white;
+            top: 0;
+            left: 0;
+            transition-duration: 0.3s;
+            overflow-y: scroll;
+            
+        }
+        .sticky{
+            position: sticky;
+            top: 0;
+        }
+        aside.hidden{
+            left:-500px;
+            transition-duration: 0.3s;
+        }
+        .menuTop{
+            display: flex;
+            margin: 50px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            position: sticky;
+        }
+        .menuTop > a.logo {
+            margin-left: 50px;
+            scale: 90%;
+        }
+        .mainCategory >ul > li{
+            text-align: left;
+            margin-left: 100px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            list-style: none;
+            font-size: 1.5em;
+        }
+        .mainCategory >ul > li:first-child{
+            margin-top: 60px;
+        }
+        .mainCategory >ul > li > h2:last-child{
+            margin-bottom: 30px;
+        }
+        .mainCategory >ul > li > h6{
+            margin-top: -15px;
+            height: 20px;
+        }
+        .subCategory > ul {
+            list-style: none;
+            text-align: left;
+            margin-left: 100px;
+            font-size: 1.2em;
+        }
+        .subCategory > ul > li{
+            height: 5px;
+            font-weight: 50;
+        }
+        .submain{
+            width: 1560px;
+            margin: auto;
+            margin-top: 60px;
+            
+
+        }
+        .submain > .subbox{
+            display: flex;
+            width: 230px;
+            height: 310px;
+
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="massage">
+        <span>📞 쉽고 편한 전화주문,헤이오더</span>
+        <span>🛍️ 베스트셀러</span>
+    </div>
+    <header>
+        <a class="logo" href="https://www.ikea.com/kr/ko"><img src="https://www.ikea.com/kr/ko/static/ikea-logo.f7d9229f806b59ec64cb.svg"></a>
+        <input class="search" type="text" placeholder="🔍검색어 입력">
+        <span class="joinBtn">🖤</span>
+        <span class="favorite">❤︎</span>
+        <span class="cart">🛒</span>
+    </header>
+
+    <nav>
+            <div class="mainnav">
+                <ul>
+                    <li>모든 제품</li>
+                    <li>공간별 쇼핑하기</li>
+                    <li>특별한 가격</li>
+                    <li>홈 액세서리</li>
+                    <li>서비스</li>
+                </ul>
+            </div>
+            <div class="subnav">
+                <ul>
+                    <li>🚚 우편 번호 입력</li>
+                    <li>🏠 매장 선택</li>
+                </ul>
+            </div>
+        </div>
+        
+    </nav>
+    <hr style="width: 81%; color: azure;">
+    <main>
+        <div class="image"><img src="youtube/이케아.webp"></div>
+        <div class="yb">
+            <div class="inbox">
+                <h2>미래를 담은 클래식한 디자인</h2>
+                <p>IKEA가 창립 80주년을 맞이하며 과거의 아이코닉한 디자인을 엄선해 다시 출시합니다. 다채로운 컬러와 새로운 소재로 재탄생한 Nytillverkad 뉘틸베르카드 컬렉션을 만나보세요.</p>
+                <button class="inboxBtn">Nytillverkad 뉘틸베르카드 컬렉션 보러 가기</button>
+            </div>
+        </div>
+    </main>
+
+    <div class="submain">
+        <h2>베스트 카테고리 쇼핑하기</h2>
+        <div class="subbox">IKEA 신제품 보러가기</div>
+        <div class="subbox"><img src="IKEA/01.avif"></div>
+        <div class="subbox"><img src="IKEA/02.avif"></div>
+        <div class="subbox"><img src="IKEA/03.avif"></div>
+        <div class="subbox"><img src="IKEA/04.avif"></div>
+        <div class="subbox"><img src="IKEA/05.avif"></div>
+    </div>
+
+    
+
+
+    <div id="sideBtn">
+        ≡
+    </div>
+    <div class="menuBtn">메뉴</div>
+    
+    <aside id="aside" class="hidden">
+        <div class="menuTop sticky">
+            <button id="closeBtn">✕</button>
+            <a class="logo" href="https://www.ikea.com/kr/ko"><img src="https://www.ikea.com/kr/ko/static/ikea-logo.f7d9229f806b59ec64cb.svg"></a>
+        </div>
+
+        <div class="mainCategory">
+            <ul>
+                <li><h2>모든 제품</h2></li>
+                <li><h2>공간별 쇼핑하기</h2></li>
+                <li><h2>특별한 가격</h2></li>
+                <li><h2>홈 액세서리</h2></li>
+                <li><h2>서비스</h2></li>
+    
+                <li><h6>신제품</h6></li>
+                <li><h6>아이디어</h6></li>
+                <li><h6>새로운 소식</h></li>
+            </ul>
+        </div>
+        
+        <div class="subCategory">
+            <ul>
+                <li><h6>매장안내</h6></li>
+                <li><h6>쉽고 편한 전화 주문, 헤이오더</h6></li>
+                <li><h6>IKEA Live</h6></li>
+                <li><h6>IKEA Family</h6></li>
+                <li><h6>IKEA for Business</h6></li>
+                <li><h6>고객지원</h6></li>
+                <li><h6>배송안내</h6></li>
+                <li><h6>내 프로필</h6></li>
+            </ul>
+        </div>
+    </aside>
+
+    <script>
+        const sideBtn = document.getElementById('sideBtn')
+        const aside = document.getElementById('aside')
+        const closeBtn = document.getElementById('closeBtn')
+
+        sideBtn.onclick = function(){
+            aside.classList.remove('hidden')
+        }
+        closeBtn.onclick = function(){
+            aside.classList.add('hidden')
+        }
+    </script>
+</body>
+</html>

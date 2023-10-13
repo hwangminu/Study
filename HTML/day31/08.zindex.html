@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08.zindex.html</title>
+    <style>
+        .red, .blue{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+            border: 2px solid black;
+            margin: 20px;
+            position: relative;
+        }
+        .red{
+            background-color: red;
+            top: 0;
+            left: 0;
+        }
+        .blue{
+            background-color: blue;
+            right: 0;
+            bottom: 0;
+            /* z-index : 다른 요소의 범위를 침범할때 z축의 변화를 줘서 겹쳐서 앞으로 나오게 하는 효과 */
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>08.zindex.html</h1>
+    <hr>
+
+    <div class="box">
+        <div style="z-index:1" class="red"></div>
+        <div style="z-index:0" class="blue"></div>
+    </div>
+    
+    <div class="box">
+        <div style="z-index:2" class="red"></div>
+        <div style="z-index:3" class="blue"></div>
+    </div>
+    
+</body>
+</html>

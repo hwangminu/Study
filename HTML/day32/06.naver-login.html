@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .lang{
+            display: flex;
+            justify-content: flex-end;
+            margin: 30px;
+        }
+        .footer_copy, .footer_logo{
+            background-image: url(https://ssl.pstatic.net/static/nid/login/m_sp_00_common_978249a6.png);
+            background-size: 244px 107px;
+        }
+    </style>
+        
+
+
+</head>
+<body>
+    <div class="header">
+        <div class="lang" id="local_switch">
+            <select id="local_switch" name="local_switch">
+                <option value="KO">한국어</option>
+                <option value="EN">English</option>
+                <option value="CN">中文</option>
+            </select>
+        </div>
+        <div class="logo">
+            <a href="https://naver.com"><img src="로고.png" width="155px" height="30px"></a>
+        </div>
+        
+        <div id="content">
+            <div class="panel">
+                <div class="input_id">
+                    <input type="text" id="id" placeholder="아이디" >
+                </div>
+
+                <div class="input_pw">
+                    <input type="password" id="pw" placeholder="비밀번호" >
+                </div>
+
+                <div class="input_check">
+                    <input type="checkbox">
+                    <label for="keep">로그인 상태 유지</label>
+                </div>
+
+                <div class="security">
+                    <label for="keep">IP보안</label>
+                    <input type="range">
+                </div>
+
+                <div class="login">
+                    <button type="submit" class="btn_login">
+                        <span class="btn_text">로그인</span>
+                    </button>
+                </div>
+
+                <ul class="find">
+                    <li>비밀번호 찾기</li>
+                    <li>아이디 찾기</li>
+                    <li>회원가입</li>
+                </ul>
+
+                <div class="banner"><img src="광고.png"></div>
+                
+                <div class="footer">
+                    <ul>
+                        <li>이용약관</li>
+                        <li>개인정보처리방침</li>
+                        <li>책임의 한계와 법적고지</li>
+                        <li>회원정보 고객센터</li>
+                    </ul>
+                    <div class="footer_copy">
+                        <a target="_blank" href="https://www.naver.com">
+                        <span class="footer_logo">
+                            <span class="blind">네이버</span>
+                        </span>
+                    </a>
+                    <span class="text">copyright</span>
+                    <span class="corp">@ NAVER Corp.</span>
+                    <span class="text">All Right Reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

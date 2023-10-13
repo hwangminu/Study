@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="sort">
+        <button id="nameAsc">이름 오름</button>
+        <button id="nameDesc">이름 내림</button>
+        <button id="ageAsc">나이 오름</button>
+        <button id="ageDesc">나이 내림</button>
+    </div>
+    
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <td class="name">이지은</td>
+            <td class="age">31</td>
+        </tr>
+        <Tr>
+            <td class="name">카리나</td>
+            <td class="age">23</td>
+        </Tr>
+        <tr>
+            <td class="name"> 김지수</td>
+            <td class="age">28</td>
+        </tr>
+    </table>
+
+    <script>
+        const table = document.querySelector('table')
+        const trArray = Array.from(document.querySelectorAll('table > tr > td'))
+
+        const nameAsc = document.getElementById('nameAsc')
+        const nameDesc = document.getElementById('nameDesc')
+        const ageAsc = document.getElementById('ageAsc')
+        const ageDesc = document.getElementById('ageDesc')
+
+        nameAsc.onclick = function(){
+            trArray.sort((a,b) => {
+                const ta = a.querySelector('.name').innerText
+                const tb = b.querySelector('.name').innerText
+                return ta < tb ? 1 : -1
+            })
+            trArray.forEach(tr => table.appendChild(tr))
+        }
+    </script>
+</body>
+</html>

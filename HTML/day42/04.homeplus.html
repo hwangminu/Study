@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04.homeplus.html</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+        td, th{
+            padding: 10px;
+            border: 1px solid grey;
+        }
+        th{
+            background-color: lightskyblue;
+        }
+        #filter{
+            width: 700px;
+            margin: 20px;
+            text-align: center;
+            
+        }
+        tr.hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>04.homeplus.html</h1>
+    <hr>
+
+    <div id="filter">
+        <label><input type="checkbox" id="blueberry">블루베리</label>
+        <label><input type="checkbox" id="strawberry">딸기</label>
+        <label><input type="checkbox" id="cherry">체리</label>
+        <label><input type="checkbox" id="etc">기타</label>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th order= "1" class="name">이름<span></span></th>
+                <th order= "1" class="category">카테고리<span></span></th>
+                <th order= "1" class="price">가격<span></span></th>
+                <th order= "1" class="salesCount">판매횟수<span></span></th>
+                <th order= "1" class="prade">점수<span></span></th>
+                <th order= "1" class="reviewCount">리뷰점수<span></span></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="homeplus(berry).js"></script>
+    <script>
+        const tbody = document.querySelector('tbody')
+        const dataList = arr.map(ob => {
+
+            // JSON.stringify(ob) : ob 객체를 JSON형식 문자열로 변환한다
+            // JSON.parse(str) : str 을 JSON형식 기준으로 객체를 변환한다.
+
+            const ob2 = JSON.parse(JSON.stringify(ob))
+            if(ob.name.includes('블루베리')) ob2.category = '블루베리'
+            else if(ob.name.includes('딸기')) ob2.category = '딸기'
+            else if(ob.name.includes('체리')) ob2.category = '체리'
+            else                             ob2.category = '기타'
+            return ob2
+        })
+        console.log(dataList[99])
+
+        function loadHandler() {
+            let tag=''
+            const categoryMap ={
+                '딸기' : 'strawberry',
+                '블루베리' : 'blueberry',
+                '체리' : 'cherry',
+                '기타' : 'etc'
+            }
+            dataList.forEach(ob => {
+                tag += `<tr class="${categoryMap[ob.category]}">`
+                tag += `    <td> ${ob.name} </td>`
+                tag += `    <td>${ob.category} </td>`
+                tag += `    <td>${ob.price} </td>`
+                tag += `    <td>${ob.salesCount}</td>`
+                tag += `    <td>${ob.grade} </td>`
+                tag += `    <td>${ob.reviewCount} </td>`
+                tag += `</tr>`
+            })
+            document.querySelector('tbody').innerHTML += tag
+        }
+        //         tag += `<tr>`
+        //         tag += `    <td class="name"> ${ob2.name} </td>`
+        //         tag += `    <td class="category">${ob2.category} </td>`
+        //         tag += `    <td class="price">${ob2.price} </td>`
+        //         tag += `    <td class="salesCount">${ob2.salesCount}</td>`
+        //         tag += `    <td class="grade">${ob2.grade} </td>`
+        //         tag += `    <td class="reviewCount">${ob2.reviewCount} </td>`
+        //         tag += `</tr>`
+        //     })
+        //     tbody.innerHTML += tag
+        // }
+
+        // const checkboxList = document.querySelectorAll('input[type = "checkbox"]')
+        
+        // function checkboxHandler(event){
+        //     const boxArray = Array.from(checkboxList)
+
+        //     const flag = boxArray.map(box => box.checked)
+
+        //     const result = dataList.filter(ob2 => {
+        //         const flag1 = ob2.category == '블루베리'
+        //         const flag2 = ob2.category == '딸기'
+        //         const flag3 = ob2.category == '체리'
+        //         const flag4 = ob2.category == '기타'
+
+        //         let f = true
+
+        //         if(flag[0]) f = f && flag1
+        //         if(flag[1]) f = f && flag2
+        //         if(flag[2]) f = f && flag3
+        //         if(flag[3]) f = f && flag4
+
+        //         if(flag[0] && flag[1]) f = flag1 || flag2
+        //         if(flag[0] && flag[2]) f = flag1 || flag3
+        //         if(flag[0] && flag[3]) f = flag1 || flag4
+
+        //         if(flag[1] && flag[2]) f = flag2 || flag3
+        //         if(flag[1] && flag[3]) f = flag2 || flag4
+                
+        //         if(flag[2] && flag[3]) f = flag3 || flag4
+
+        //         if(flag[0] && flag[1] && flag[2]) f= flag1 || flag2 || flag3
+        //         if(flag[0] && flag[1] && flag[3]) f= flag1 || flag2 || flag4
+        //         if(flag[0] && flag[2] && flag[3]) f= flag1 || flag3 || flag4
+                
+        //         if(flag[1] && flag[1] && flag[3]) f= flag2 || flag3 || flag4
+
+        //         if(flag[0] && flag[1] && flag[2] && flag[3]) f = true
+            
+        //         return f
+        //     })
+        //     document.querySelector('tbody').innerHTML =''
+        //     let tag = ''
+        //     result.forEach(ob2 => {
+        //         tag += `<tr>`
+        //         tag += `    <td class="name"> ${ob2.name} </td>`
+        //         tag += `    <td class="category">${ob2.category} </td>`
+        //         tag += `    <td class="price">${ob2.price} </td>`
+        //         tag += `    <td class="salesCount">${ob2.salesCount}</td>`
+        //         tag += `    <td class="grade">${ob2.grade} </td>`
+        //         tag += `    <td class="reviewCount">${ob2.reviewCount} </td>`
+        //         tag += `</tr>`
+        //     })
+        //     document.querySelector('tbody').innerHTML += tag
+        // }
+        const boxArray = Array.from(document.querySelectorAll('input[type = "checkbox"]'))
+
+        function filterHandler(event){
+            const checkedBox = boxArray.filter(box => box.checked).map(box=> box.id)
+            
+            document.querySelectorAll('tbody > tr').forEach(tr =>{
+                const flag = checkedBox.includes(tr.classList[0])
+                if(checkedBox.length == 0) tr.classList.remove('hidden')
+                else if(flag)               tr.classList.remove('hidden')
+                else                        tr.classList.add('hidden')
+            })
+        }
+        boxArray.forEach(box => box.onclick = filterHandler)
+
+        // const thList = document.querySelectorAll('th')
+
+        // function sortHandler(event){
+        //     const className = event.target.className
+        //     const order = +event.target.getAttribute('order')
+        //     document.querySelectorAll('thead span').forEach(span => span.innerText = '')
+        //     const span = event.target.querySelector('span')
+        //     span.innerText = order > 0 ? ' ▲' : ' ▼'
+
+        //     const trArray = Array.from(document.querySelectorAll('tbody > tr'))
+
+        //     trArray.sort((a, b) => {
+        //         let valueA = a.querySelector('.' + className).innerText
+        //         let valueB = b.querySelector('.' + className).innerText
+        //         let result = valueA > valueB ? 1 : -1
+        //         event.target.setAttribute('order', order * -1)
+        //         return result * order
+        //     })
+            
+        //     trArray.forEach(tr => tbody.appendChild(tr))
+        // }
+        // thList.forEach(th => th.onclick = sortHandler)
+
+
+        window.onload = loadHandler
+        
+        
+    </script>
+</body>
+</html>

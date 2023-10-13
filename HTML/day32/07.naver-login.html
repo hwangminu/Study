@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #header, #main, #find, #banner, #footer, #footer_copy{
+            width: 500px;
+            margin: 50px auto;
+            box-sizing: border-box;
+        }
+        #header{
+            position: relative;
+        }
+        #main{
+            border: 1px solid grey;
+            border-top: 0;
+            padding-bottom: 40px;
+        }
+        #lang_select{
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+        #logo{
+            width: 155px;
+            height: 30px;
+            background-image: url(네이버.png);
+            background-size: auto;
+        }
+        
+        #main > ul{
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+        #main > ul > li{
+            flex: 1;
+            text-align: center;
+            border: 1px solid grey;
+            padding: 10px;
+        }
+        /*
+        #content{
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+        */
+        #content {
+            width: 500px;
+        }
+        #content > div.input{
+            width: 400px;
+            margin: 5px auto;
+            border: 1px solid grey;
+            padding: 10px;
+            border-radius: 5px;
+
+        }
+        #content > div.input > input{
+            all: unset;
+
+        }
+        #content > button{
+            display: block;
+            width: 400px;
+            padding: 10px;
+            margin: auto;
+        }
+
+        .sb{
+            display: flex;
+            justify-content: space-between;
+            width: 420px;
+            margin: 20px auto;
+        }
+        .ipsec > input{
+            width: 30px;
+        }
+        #find > ul{
+            display: flex;
+            list-style: none;
+            margin: auto;
+            padding: 0;
+            font-size: 15px;
+            justify-content: space-evenly;
+        }
+        #footer > ul{
+            display: flex;
+            list-style: none;
+            margin: auto;
+            padding: 0;
+            font-size: 13px;
+            justify-content: space-between;
+        }
+        #footer_copy > ul{
+            display: flex;
+            list-style: none;
+            margin: auto;
+            padding: 0;
+            font-size: 11px;
+            justify-content: space-evenly;
+        }
+        
+        
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="logo">
+            <a href="https://www.naver.com" class="blind">
+                <img src="네이버.png"></a>
+        </div>
+        <div id="lang_select">
+            <select id="local_switch" name="local_switch">
+                <option value="KO">한국어</option>
+                <option value="EN">English</option>
+                <option value="CN">中文</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="main">
+            <ul>
+                <li class="menu-id">ID로그인</li>
+                <li class="menu-num">일회용로그인</li>
+                <li class="menu-qr">QR코드</li>
+            </ul>
+
+            <div id="content">
+                <div class="input">
+                    🧑‍💼<input type="text" placeholder="아이디">
+                </div>
+                <div class="input">
+                    🔒<input type="password" placeholder="비밀번호">
+                </div>
+                <div class="sb">
+                    <div>
+                        <input type="checkbox">로그인 상태 유지
+                    </div>
+                    <div class="ipsec">
+                        IP보안<input type="range" min="0" max="1">
+                    </div>
+                </div>
+                <button>로그인</button>
+            </div>
+
+        </div>
+
+        <div id="find">
+            <ul>
+                <li>비밀번호 찾기</li>
+                <li>|</li>
+                <li>아이디 찾기</li>
+                <li>|</li>
+                <li>회원가입</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="banner">
+        <img src="광고.png"
+        width="100%">
+    </div>
+
+    <div id="footer">
+        <ul>
+            <li>이용약관</li>
+            <li>개인정보처리방침</li>
+            <li>책임의 한계와 법적고지</li>
+            <li>회원정보 고객센터</li>
+        </ul>
+    </div>
+
+    <div id="footer_copy">
+        <ul>
+            <li>NAVER</li>
+            <li>copyright</li>
+            <li>© NAVER Corp.</li>
+            <li>All right Reserved</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
